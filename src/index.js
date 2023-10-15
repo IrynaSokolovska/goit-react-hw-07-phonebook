@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { persistor, store } from './redux/store';
+// import { persistor, store } from './redux/store';
 import { App } from 'components/App';
 import './index.css';
-import { PersistGate } from 'redux-persist/integration/react';
+import { store } from 'redux/store';
+// import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <PersistGate loading={null} persistor={persistor}>
-    <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </Provider>
-  </PersistGate>
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
 );
 
 // import React from 'react';
@@ -32,3 +31,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 //   <App />
 // </BrowserRouter>; */
 // }
+// --------------------------------
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <PersistGate loading={null} persistor={persistor}>
+//     <Provider store={store}>
+//       <React.StrictMode>
+//         <App />
+//       </React.StrictMode>
+//     </Provider>
+//   </PersistGate>
+// );

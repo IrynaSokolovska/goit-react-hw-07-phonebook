@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { handleDeleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 
 export const ContactListItems = ({ contact }) => {
   const dispatch = useDispatch();
 
+  const handleDeleteContact = () => dispatch(deleteContact(contact.id));
+
   return (
     <li>
       <p>
-        {contact.name}: {contact.number}
+        {contact.name}: {contact.phone}
       </p>
       <button
         type="button"
